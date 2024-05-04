@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tables - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        /* Variables */
+:root {
+  --white: #fff;
+  --primary-color: #3783b5;
+  --brand-success: #46be8a;
+  --brand-danger: #f73737;
+}
+
+/* Body */
+body {
+  padding: 15px;
+}
+
+/* .bus */
+.bus {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border-bottom: 5px solid red;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .seats */
+.seats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center !important;
+  padding: 0;
+  margin-bottom: 2px;
+}
+
+/* .seat */
+.seat {
+  display: flex;
+  padding: 5px;
+  position: relative;
+}
+
+.seat label {
+    border: 1px solid #5c5e60;
+  border-radius: 4px;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 0.1rem;
+  display: inline-block;
+  font-size: 0.7rem;
+}
+
+.seat input[type="checkbox"] {
+  display: none !important;
+}
+
+.seat input[type="checkbox"] + label {
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px;
+}
+
+.seat input[type="checkbox"]:hover + label {}
+
+.seat input[type="checkbox"]:checked + label {
+  background: var(--brand-success);
+}
+
+.seat input[type="checkbox"]:disabled + label {
+  cursor: not-allowed;
+  background: var(--brand-danger);
+}
+
+
+    </style>
+</head>
+<body class="sb-nav-fixed">
+<div>
+    <div class="container  my-5" layout:fragment="content">
+        <form class="w-100 d-flex justify-content-around" action="#" th:action="@{/public/bookSeats}" method="POST">
+            <div class="col-7">
+                <div class="col-12 bus">
+                    <div class="bus seat2-2 border-0 p-0">
+                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>
+                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>                      <div class="box">
+                        <span>A</span>
+                        <ol class="seats">
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-1" value="1" required="" type="checkbox">
+                            <label for="seat-checkbox-1-1">
+                                                                                                1                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-2" value="2" required="" type="checkbox">
+                            <label for="seat-checkbox-1-2">
+                                                                                                2                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-3" value="3" required="" type="checkbox">
+                            <label for="seat-checkbox-1-3">
+                                                                                                3                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-4" value="4" required="" type="checkbox">
+                            <label for="seat-checkbox-1-4">
+                                                                                                4                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-5" value="5" required="" type="checkbox">
+                            <label for="seat-checkbox-1-5">
+                                                                                                5                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-6" value="6" required="" type="checkbox">
+                            <label for="seat-checkbox-1-6">
+                                                                                                6                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                7                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                8                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-7" value="7" required="" type="checkbox">
+                            <label for="seat-checkbox-1-7">
+                                                                                                9                                                                        </label>
+                          </li>
+                          <li class="seat">
+                            <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-checkbox-1-8" value="8" required="" type="checkbox">
+                            <label for="seat-checkbox-1-8">
+                                                                                                10                                                                        </label>
+                          </li>
+                        </ol>
+                        <span>A</span>
+                      </div>
+                
+                      <p class="py-3 m-0 text-center">
+                          màn hình
+                      </p>
+                </div>      
+            </div>
+            
+            <div class="col-12 row mt-4 ">
+                <div class="d-flex flex-row mb-3">
+                    <div class="d-flex flex-row mb-3 pe-5">
+                        <div class=" rounded col-1 border border-dark p-3 " style="background-color: #3783b5;"></div>
+                        <p class="m-0 ps-3"> Ghế không bán</p>
+                    </div>
+                    <div class="d-flex flex-row mb-3">
+                        <div class=" rounded col-1 border border-dark p-3" style="background-color: #46be8a;"></div>
+                        <p class="m-0 ps-3"> Ghế đang chọn</p>
+                    </div>
+                </div>   
+            </div>
+        </div>
+            <!--END BUS -->
+    
+    
+    
+            <!-- Thông tin chuyến xe  -->
+            <div class="col-4 ">
+                <div class="card" style="height: 60%;">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-start pb-3">
+                        <div class="w-25">
+                          <img src="https://cdn.galaxycine.vn/media/2024/4/26/roundup-500_1714102279125.jpg"  class="w-100">
+                        </div>
+                        <div class="ms-3">
+                          <p class="card-text"><strong  >Vây Hãm: Kẻ Trừng Phạt</strong></p>
+                          <p class="card-text">2D Phụ đề<strong  ></strong></p>
+                        </div>
+                      </div>
+                      <p class="card-text mb-2">Galaxy Đà Nẵng - <strong  >RAP 3</strong></p>
+                      <p class="card-text mb-2">Suất:  <strong  >22:45</strong>  - Thứ Sáu,<strong  >03/05/2024</strong> </p>
+                      <p class="card-text mb-2">Vây Hãm: Kẻ Trừng Phạt<strong  ></strong></p>
+                    </div>
+    
+                    <div class="card-footer">
+                      <div class="d-flex justify-content-between">
+                        <h5 class="card-title fw-bolder ">Tổng cộng </h5>
+                        <h5 class="card-title fw-bolder "> 1 cụ</h5>
+                      </div>
+                        
+                    </div>
+                </div>
+                <div class="mt-4 d-flex justify-content-end">
+                  <a type="button" class="btn text-center w-50">Quay lại</a>
+                  <a type="button" class="btn btn-secondary w-50">Tiếp tục</a>
+                </div>
+            </div>
+            <!-- END Thông tin chuyến xe  -->
+        </form>
+        <script>
+            const seats = document.querySelectorAll(".seat_ticket");
+            const selectedOptions = document.getElementById('SelectedSeats');
+            const totalAmount = document.getElementById('TotalAmount');
+            var filmInfoElement = document.querySelector(".film-info");
+    
+            var giaPhim = parseFloat(filmInfoElement.getAttribute("data-price"));
+            var priceElement = document.querySelector(".priceTicket");
+            var soGheDaChon = 0;
+            var tongTien = 0;
+            let selectedSeat = [];
+    
+            seats.forEach((checkbox) => {
+                checkbox.addEventListener('change', function() {
+                    const checkboxValue = checkbox.getAttribute("data-chair-name");
+                    if (checkbox.checked) {
+                        selectedSeat.push(checkboxValue);
+                    } else {
+                        const index = selectedSeat.indexOf(checkboxValue);
+                        if (index !== -1) {
+                            selectedSeat.splice(index, 1);
+                        }
+                    }
+                    selectedOptions.textContent =''+selectedSeat.join(', ');
+    
+    
+                    soGheDaChon = selectedSeat.length;
+    
+                    if (soGheDaChon > 0) {
+                        tongTien = giaPhim * soGheDaChon;
+                        priceElement.textContent = "Tổng Tiền: " + tongTien + " VNĐ";
+                        totalAmount.value = tongTien;
+                    } else {
+                        priceElement.textContent = "Tổng Tiền: 0 VNĐ";
+                        tongTien = 0;
+                        totalAmount.value = tongTien;
+                    }
+                });
+            });
+    
+            
+    
+    
+            function validateForm() {
+                var isChecked = false;
+    
+                // Lặp qua mỗi checkbox ghế
+                for (var i = 0; i < seats.length; i++) {
+                    if (seats[i].checked) {
+                        isChecked = true;
+                        break; // Nếu có ít nhất một checkbox được chọn, thoát khỏi vòng lặp
+                    }
+                }
+    
+                // Nếu không có checkbox nào được chọn, hiển thị thông báo và ngăn chặn việc submit form
+                if (!isChecked) {
+                    alert("Vui lòng chọn ghế .");
+                    return false; // Ngăn chặn việc submit form
+                }
+    
+                return true; // Cho phép submit form nếu có ít nhất một checkbox được chọn
+            }
+        </script>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
